@@ -47,9 +47,8 @@ async def info(ctx):
 @tasks.loop(hours=24)
 async def check_birthdays():
     today = datetime.now().strftime('%m-%d')
-    channel = bot.get_channel(1290087726497927199)  # Replace with your actual channel ID
+    channel = bot.get_channel(1290087726497927199) 
     if not birthdays:
-        # If there are no birthdays, don't check
         print("No birthdays registered.")
         return
     for user_id, birthday in birthdays.items():
